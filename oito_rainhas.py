@@ -12,7 +12,13 @@ def checaAtaqueHorizontal(rainhas_coordenadas):
     return 1
 
 def checaAtaqueVertical(rainhas_coordenadas):
-    pass
+    posicoes_coluna = []
+    for par in rainhas_coordenadas:
+        if par[1] not in posicoes_coluna:
+            posicoes_coluna.append(par[1])
+        else:
+            return 0
+    return 1
 
 def checaAtaqueDiagonal(rainhas_coordenadas):
     pass
