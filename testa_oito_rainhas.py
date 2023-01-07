@@ -10,7 +10,13 @@ def testa_checaAtaqueHorizontal():
     assert checaAtaqueHorizontal(tabuleiroDados3) == 1
 
 def testa_checaAtaqueVertical():
-    pass
+    tabuleiroDados1 = [(0,0), (1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0)]
+    tabuleiroDados2 = [(1,0), (5,0), (7,1), (3,3), (0,4), (2,5), (4,6), (6,7)]
+    tabuleiroDados3 = [(0,0), (6,1), (3,2), (5,3), (7,4), (1,5), (4,6), (2,7)]
+
+    assert checaAtaqueHorizontal(tabuleiroDados1) == 0
+    assert checaAtaqueHorizontal(tabuleiroDados2) == 0
+    assert checaAtaqueHorizontal(tabuleiroDados3) == 1
 
 def testa_checaAtaqueDiagonal():
     pass
