@@ -12,7 +12,13 @@ def checaAtaqueDiagonal(rainhas_coordenadas):
     pass
 
 def checaEntrada(rainhas_coordenadas):
-    pass
+    if len(rainhas_coordenadas) != 8:
+        return -1
+    for par in rainhas_coordenadas:
+        if rainhas_coordenadas.count(par) > 1:
+            return -1
+    return 1
+
 
 def recebeDados(linha, posicao_linha, rainhas_coordenadas):
     if len(linha) != 8:
