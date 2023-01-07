@@ -52,4 +52,14 @@ def testa_recebeDados():
     
 
 def testa_checaEntrada():
-    pass
+    tabuleiroDados1 = []
+    tabuleiroDados2 = [(0,0), (1,1), (4,7)]
+    tabuleiroDados3 = [(0,0), (6,1), (3,2), (5,3), (7,4), (1,5), (4,6), (2,7), (1,5)]
+    tabuleiroDados4 = [(0,4), (1,1), (2,3), (3,6), (4,2), (5,7), (6,5), (7,0)]
+    tabuleiroDados5 = [(0,4), (0,4), (2,3), (3,6), (4,2), (5,7), (6,5), (7,0)]
+
+    assert checaEntrada(tabuleiroDados1) == -1
+    assert checaEntrada(tabuleiroDados2) == -1
+    assert checaEntrada(tabuleiroDados3) == -1
+    assert checaEntrada(tabuleiroDados4) == 1
+    assert checaEntrada(tabuleiroDados5) == -1
