@@ -2,24 +2,35 @@ valid = 1
 rainhas_coordenadas = []
 count = 0
 
-def checaAtaqueHorizontal():
+def checaAtaqueHorizontal(rainhas_coordenadas):
     pass
 
-def checaAtaqueVertical():
+def checaAtaqueVertical(rainhas_coordenadas):
     pass
 
-def checaAtaqueDiagonal():
+def checaAtaqueDiagonal(rainhas_coordenadas):
     pass
 
-def checaEntrada():
+def checaEntrada(rainhas_coordenadas):
     pass
 
 def recebeDados(linha, posicao_linha, rainhas_coordenadas):
-    pass
+    if len(linha) != 8:
+        return -1
+    else:
+        if '1' in linha:
+            for posicao_coluna in range(len(linha)):
+                if linha[posicao_coluna] == '1':
+                    par_coordenadas = (posicao_linha, posicao_coluna)
+                    rainhas_coordenadas.append(par_coordenadas)
+        return 1
 
 
 while count < 8 and valid == 1:
-    valid = recebeDados(input(), count, rainhas_coordenadas)
+    try:
+        valid = recebeDados(input(), count, rainhas_coordenadas)
+    except Exception:
+        pass
     count += 1
 
 if valid == 1:
