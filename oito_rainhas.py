@@ -21,7 +21,13 @@ def checaAtaqueVertical(rainhas_coordenadas):
     return 1
 
 def checaAtaqueDiagonal(rainhas_coordenadas):
-    pass
+    for index_par1 in range(len(rainhas_coordenadas)):
+        par1 = rainhas_coordenadas[index_par1]
+        for par2 in rainhas_coordenadas[(index_par1 + 1):]:
+            if abs(par1[0] - par2[0]) == abs(par1[1] - par2[1]):
+                return 0
+    return 1
+
 
 def checaEntrada(rainhas_coordenadas):
     if len(rainhas_coordenadas) != 8:
