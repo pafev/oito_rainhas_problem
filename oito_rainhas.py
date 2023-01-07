@@ -3,7 +3,13 @@ rainhas_coordenadas = []
 count = 0
 
 def checaAtaqueHorizontal(rainhas_coordenadas):
-    pass
+    posicoes_linha = []
+    for par in rainhas_coordenadas:
+        if par[0] not in posicoes_linha:
+            posicoes_linha.append(par[0])
+        else:
+            return 0
+    return 1
 
 def checaAtaqueVertical(rainhas_coordenadas):
     pass
