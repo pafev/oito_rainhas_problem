@@ -1,4 +1,4 @@
-from oito_rainhas import checaAtaqueHorizontal, checaAtaqueVertical, checaAtaqueDiagonal, checaEntrada, recebeDados
+from oito_rainhas import *
 
 def testa_checaAtaqueHorizontal():
     tabuleiroDados1 = [(0,0), (0,1), (0,2), (0,3), (0,4), (0,5), (0,6), (0,7)]
@@ -63,3 +63,14 @@ def testa_checaEntrada():
     assert checaEntrada(tabuleiroDados3) == -1
     assert checaEntrada(tabuleiroDados4) == 1
     assert checaEntrada(tabuleiroDados5) == -1
+
+def teste_checaSolucao():
+    matrizLinhas = ['10000000',
+                    '00000100',
+                    '00000001',
+                    '00100000',
+                    '00000010',
+                    '00010000',
+                    '01000000',
+                    '00001000']
+    assert checaSolucao(matrizLinhas) == 1
