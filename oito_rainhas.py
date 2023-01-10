@@ -48,4 +48,23 @@ def recebeDados(linha, posicao_linha, rainhas_coordenadas):
         return 1
 
 def checaSolucao(matriz_linhas):
-    return
+    global rainhas_coordenadas
+    valid = 1
+    if len(matriz_linhas) > 8:
+        valid = -1
+    else:
+        count = 0
+        while count < 8 and valid == 1:
+            valid = recebeDados(matriz_linhas[count], count, rainhas_coordenadas)
+            count += 1     
+        if valid == 1:
+            valid = checaEntrada(rainhas_coordenadas)
+        if valid == 1:
+            valid = checaAtaqueHorizontal(rainhas_coordenadas)
+        if valid == 1:
+            valid = checaAtaqueVertical(rainhas_coordenadas)
+            print(valid)
+        if valid == 1:
+            valid = checaAtaqueDiagonal(rainhas_coordenadas)
+    rainhas_coordenadas = []
+    return valid
