@@ -65,7 +65,7 @@ def testa_checaEntrada():
     assert checaEntrada(tabuleiroDados5) == -1
 
 def teste_checaSolucao():
-    matrizLinhas = ['10000000',
+    matrizLinhas1 = ['10000000',
                     '00000100',
                     '00000001',
                     '00100000',
@@ -73,4 +73,27 @@ def teste_checaSolucao():
                     '00010000',
                     '01000000',
                     '00001000']
-    assert checaSolucao(matrizLinhas) == 1
+
+    matrizLinhas2 = ['10000000',
+                    '00000100',
+                    '00000001',
+                    '00100000',
+                    '00000010',
+                    '00010000',
+                    '01000000',
+                    '00001000',
+                    '00000000',
+                    '00000000']
+    
+    matrizLinhas3 = ['10000000',
+                    '10000000',
+                    '00000001',
+                    '00100000',
+                    '00000010',
+                    '00010000',
+                    '01000000',
+                    '00001000']
+
+    assert checaSolucao(matrizLinhas1) == 1
+    assert checaSolucao(matrizLinhas2) == -1
+    assert checaSolucao(matrizLinhas3) == 0
