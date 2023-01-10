@@ -1,0 +1,71 @@
+    O desenvolvimento foi feito orientado a testes, onde foram pensadas quais
+funções seriam necessárias para o programa, então eram estabelecidos os testes
+que valdam o que se espera da função e, só então, era desenvolvida a função, com
+o objetivo de passar nos testes construídos
+
+    Foram 6 funções, onde 5 foram pensadas logo de cara, e 1 foi idealizada após
+encontro com o professor e o esclarecimento de como deveria ser a entrada do programa
+
+    Para cada função, foi feita um sequência de testes
+
+obs1.: a entrada se constitui de uma lista de strings, onde cada string representa uma
+linha do tabuleiro
+obs2.: as rainhas são obtidas da entrada como tuplas. Cada rainha é um tupla, onde
+o primeiro elemento é o indice da sua linha, e o segundo elemento é o indice da sua coluna
+obs3.: valid é o valor para saber se a solução apresentada é válida ou não
+
+>> Teste para função checaAtaqueHorizontal 
+        os dois primeiros testes foram feitos para checar se a função retorna 0, em casos
+    de ataque horizontal, ou seja, se duas ou mais rainhas possuem o msm indice de linha
+        o terceiro teste foi feito para checar se a função retorna 1, em casos em que não
+    há ataque horizontal
+
+>> Teste para função checaAtaqueVertical
+        os dois primeiros testes foram feitos para checar se a função retorna 0, em casos
+    de ataque vertical, ou seja, se duas ou mais rainhas possuem o msm indice de coluna
+        o terceiro teste foi feito para checar se a função retorna 1, em casos em que não
+    há ataque vertical
+
+>> Teste para função checaAtaqueDiagonal
+        os dois primeiros testes foram feitos para checar se a função retorna 0, em casos
+    de ataque diagonal, ou seja, se duas ou mais rainhas possuem variação em linha e va-
+    riação em coluna iguais em módulo, já que isso define rainhas estarem numa mesma dia-
+    gonal
+        o terceiro teste foi feito para checar se a função retorna 1, em casos em que não
+    há ataque diagonal
+
+>> Teste para função recebeDados
+        Essa função deve ter por objetivo processar uma linha do tabuleiro e adicionar à
+    lista entregue (idealmente, a lista de rainhas) cada rainha presente na linha em a-
+    nálise, sendo representa por uma tupla (indice_linha, indice_coluna)
+        Para essa função, os testes são divididos em pares, onde, para cada chamada, é
+    testado se o valor de valid e a lista de rainhas obtiveram os valores esperados
+
+        O primeiro par checa o retorno para o processamente de uma linha sem rainhas (a-
+    pesar de uma linha sem rainhas ser sinal de ataque horizontal, essa checagem não está
+    no escopo dessa função, e sim da checaAtaqueHorizontal)
+
+        O segundo par checa se a função é capaz de processar mais de uma rainhas em uma
+    mesma linha (apesar de isso ser sinal de ataque vertical, essa checagem não está no
+    escopo dessa função, e sim da checaAtaqueVertical)
+
+        O terceiro par checa se a função é capaz de retornar como inválida uma linha com
+    mais de 8 espaços, o que representa o tabuleiro não ser 8x8
+
+        O quarto par checa se a função é capaz de retornar como inválida uma linha com
+    menos de 8 espaços, o que representa o tabuleiro não ser 8x8
+
+>> Teste para função checaEntrada
+        Essa função tem por objetivo checar a lista de rainhas processadas pela função
+    recebeDados
+        Então, seus testes são orientados em saber se, para o problema em questão, existem
+    mais ou menos de 8 rainhas, e se há alguma rainha repetida (por alguma falha da função
+    recebeDados). Em todos estes casos, a função deve retornar um valor inválido, ou seja,
+    deve retornar -1. Caso contrário, tudo estará correto e a função retornará 1
+
+>> Teste para função checaSolucao
+        Essa função reune todas as funções idealizadas acima, para, a partir de uma entrada,
+    representada por uma lista de linhas de tabuleiro, é checado se este tabuleiro é uma so-
+    lução para o problema das rainhas ou não
+        Então seus testes são simplesmente baseados em saber se, a partir de uma lista de
+    linhas, é retornada a devida análise dessa entrada
